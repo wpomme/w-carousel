@@ -1,0 +1,22 @@
+.main {
+  min-height: 100vh;
+}
+
+.position-container {
+  position: relative;
+  height: 400px;
+}
+
+.element-container {
+  position: absolute;
+  display: flex;
+  overflow-x: hidden;
+  transition-property: width, left;
+  transition-duration: 0.1s;
+  transition-delay: 0.1ms;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
