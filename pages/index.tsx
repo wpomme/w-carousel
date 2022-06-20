@@ -21,7 +21,7 @@ const Home: NextPage = () => {
         <Carousel elementWidth={elementWidth}>
           {[1, 2, 3, 4, 5].map((index) => {
             return (
-              <img src={"/dummy-600-400.png"} alt="dummy image" width={elementWidth} key={index.toString()} />
+              <img src={"/dummy-image.svg"} alt="dummy image" width={elementWidth} key={index.toString()} />
             )
           })}
         </Carousel>
