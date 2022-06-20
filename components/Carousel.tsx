@@ -12,17 +12,23 @@ export const Carousel: React.VFC<CarouselProps> = ({elementWidth, children, gapB
   const maxElementPositionWidth = elementWidth * elementLength
   const [elementContainerPosition, setElementContainerPosition] = React.useState(0)
   const [elementContainerWidth, setElementContainerWidth] = React.useState(elementWidth)
+  const [leftToElement, setLeftToElement] = React.useState(0);
 
   const moveLength = elementWidth + gapBetweenElements
 
+  React.useEffect(() => {
+    setLeftToElement((window.innerWidth - elementWidth) / 2)
+  }, [elementWidth]);
+
   return (
     <div className={styles["carousel-container"]}>
-      <div className={styles["position-container"]}>
+      <div className={styles["position-container"]} style={{ marginLeft: `${leftToElement}px` }}>
         <div className={styles["element-container"]} style={{ columnGap: `${gapBetweenElements}px`, width: `${elementContainerWidth}px`, left: elementContainerPosition }}>
           {children}
         </div>
+        <div className={styles["hidden-element"]} style={{ width: `${leftToElement}px`, left: `-${leftToElement}px` }} />
       </div>
-      <div className={styles["button-container"]} style={{ width: `${elementWidth}px`}}>
+      <div className={styles["button-container"]} style={{ width: `${elementWidth}px`, marginLeft: `${leftToElement}px` }}>
         <button
           onClick={() => {
             if (elementContainerPosition + moveLength > 0) return;
