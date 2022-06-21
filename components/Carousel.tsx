@@ -23,10 +23,10 @@ export const Carousel: React.VFC<CarouselProps> = ({elementWidth, children, gapB
   return (
     <div className={styles["carousel-container"]}>
       <div className={styles["position-container"]} style={{ marginLeft: `${leftToElement}px` }}>
-        <div className={styles["element-container"]} style={{ columnGap: `${gapBetweenElements}px`, width: `${elementContainerWidth}px`, left: elementContainerPosition }}>
+        <div className={styles["element-container"]} style={{ columnGap: `${gapBetweenElements}px`, width: `${elementContainerWidth + gapBetweenElements}px`, left: elementContainerPosition }}>
           {children}
         </div>
-        <div className={styles["hidden-element"]} style={{ width: `${leftToElement}px`, left: `-${leftToElement}px` }} />
+        <div className={styles["hidden-element"]} style={{ width: `${leftToElement - gapBetweenElements}px`, left: `-${leftToElement}px` }} />
       </div>
       <div className={styles["button-container"]} style={{ width: `${elementWidth}px`, marginLeft: `${leftToElement}px` }}>
         <button
