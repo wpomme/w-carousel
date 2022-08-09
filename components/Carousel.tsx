@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../styles/Home.module.scss'
+import styles from './Carousel.module.scss'
 
 type CarouselProps = {
   children: React.ReactNode
@@ -7,7 +7,7 @@ type CarouselProps = {
   gapBetweenElements?: number
 }
 
-export const Carousel: React.VFC<CarouselProps> = ({elementWidth, children, gapBetweenElements = 20}) => {
+export const Carousel: React.FC<CarouselProps> = ({elementWidth, children, gapBetweenElements = 20}) => {
   const elementLength = React.Children.count(children)
   const maxElementPositionWidth = elementWidth * elementLength
   const [elementContainerPosition, setElementContainerPosition] = React.useState(0)
