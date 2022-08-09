@@ -45,7 +45,7 @@ export const Carousel: React.FC<CarouselProps> = ({
           {children}
         </div>
         <div
-          className={styles["hidden-element"]}
+          className={styles["element-to-hidden"]}
           style={{
             width: `${leftToElement - gapBetweenElements}px`,
             left: `-${leftToElement}px`,
