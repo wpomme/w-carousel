@@ -1,16 +1,9 @@
-// TODO
-$tmpElementHeight: 400px;
-
 .position-container {
   position: relative;
-  height: $tmpElementHeight;
 }
 
 .hidden-element {
   position: absolute;
-  height: $tmpElementHeight;
-  // TODO
-  background-color: #fff;
 }
 
 .element-container {
