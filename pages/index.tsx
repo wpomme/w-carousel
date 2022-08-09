@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
-import React from 'react'
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import { Carousel } from '../components/Carousel';
+import React from "react"
+import type { NextPage } from "next"
+import Head from "next/head"
+import { Carousel } from "../components/Carousel"
 
 const elementWidth = 600
 
@@ -11,7 +11,7 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>Carousel Test</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel='icon' href='/favicon.ico' />
       </Head>
 
       <main>
@@ -19,18 +19,24 @@ const Home: NextPage = () => {
         <Carousel elementWidth={elementWidth}>
           {[1, 2, 3, 4, 5].map((index) => {
             return (
-              <img src={"/dummy-image.svg"} alt="dummy image" width={elementWidth} key={index.toString()} />
+              <img
+                src={"/dummy-image.svg"}
+                alt='dummy image'
+                width={elementWidth}
+                key={index.toString()}
+              />
             )
           })}
         </Carousel>
-        <style jsx>{`
-          main {
-            min-height: 100vh;
-          }
-          h1 {
-            text-align: center;
-          }
-        `}
+        <style jsx>
+          {`
+            main {
+              min-height: 100vh;
+            }
+            h1 {
+              text-align: center;
+            }
+          `}
         </style>
       </main>
     </>
