@@ -20,7 +20,7 @@ const Home: NextPage = () => {
           {[1, 2, 3, 4, 5].map((index) => {
             return (
               <img
-                src={"/dummy-image.svg"}
+                src={`/dummy-image-${index.toString()}.svg`}
                 alt='dummy image'
                 width={elementWidth}
                 key={index.toString()}
